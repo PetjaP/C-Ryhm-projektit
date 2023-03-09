@@ -1,0 +1,11 @@
+C:\Users\shcka\source\repos\PetjaP\C-Ryhm-projektit\Hotellivarausjarjestelma\bin\Debug\Hotellivarausjarjestelma.exe.config
+C:\Users\shcka\source\repos\PetjaP\C-Ryhm-projektit\Hotellivarausjarjestelma\bin\Debug\Hotellivarausjarjestelma.exe
+C:\Users\shcka\source\repos\PetjaP\C-Ryhm-projektit\Hotellivarausjarjestelma\bin\Debug\Hotellivarausjarjestelma.pdb
+C:\Users\shcka\source\repos\PetjaP\C-Ryhm-projektit\Hotellivarausjarjestelma\obj\Debug\Hotellivarausjarjestelma.csproj.AssemblyReference.cache
+C:\Users\shcka\source\repos\PetjaP\C-Ryhm-projektit\Hotellivarausjarjestelma\obj\Debug\Hotellivarausjarjestelma.csproj.SuggestedBindingRedirects.cache
+C:\Users\shcka\source\repos\PetjaP\C-Ryhm-projektit\Hotellivarausjarjestelma\obj\Debug\Hotellivarausjarjestelma.AsiakkaidenHallinta.resources
+C:\Users\shcka\source\repos\PetjaP\C-Ryhm-projektit\Hotellivarausjarjestelma\obj\Debug\Hotellivarausjarjestelma.Properties.Resources.resources
+C:\Users\shcka\source\repos\PetjaP\C-Ryhm-projektit\Hotellivarausjarjestelma\obj\Debug\Hotellivarausjarjestelma.csproj.GenerateResource.cache
+C:\Users\shcka\source\repos\PetjaP\C-Ryhm-projektit\Hotellivarausjarjestelma\obj\Debug\Hotellivarausjarjestelma.csproj.CoreCompileInputs.cache
+C:\Users\shcka\source\repos\PetjaP\C-Ryhm-projektit\Hotellivarausjarjestelma\obj\Debug\Hotellivarausjarjestelma.exe
+C:\Users\shcka\source\repos\PetjaP\C-Ryhm-projektit\Hotellivarausjarjestelma\obj\Debug\Hotellivarausjarjestelma.pdb
