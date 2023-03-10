@@ -27,19 +27,19 @@ namespace Hotellivarausjarjestelma
             komento.Parameters.Add("@ptp", MySqlDbType.VarChar).Value = ppaikka;
             if(kayttaja !="")
             {
-                komento.Parameters.Add("@ktu", MySqlDdType.VarChar).Value =kayttaja.ToLower();
+                komento.Parameters.Add("@ktu", MySqlDbType.VarChar).Value =kayttaja.ToLower();
             }
             else
             {
-                komento.Parameters.Add("@ktu", MySqlDdType.VarChar).Value = enimi.Substring(0, 3).ToLower() + snimi.Substring(0, 5).ToLower();
+                komento.Parameters.Add("@ktu", MySqlDbType.VarChar).Value = enimi.Substring(0, 3).ToLower() + snimi.Substring(0, 5).ToLower();
             }
             if (ssana != "")
             {
-                komento.Parameters.Add("@ssa", MySqlDdType.VarChar).Value = ssana;
+                komento.Parameters.Add("@ssa", MySqlDbType.VarChar).Value = ssana;
             }
             else
             {
-                komento.Parameters.Add("@ssa", MySqlDdType.VarChar).Value = "xcxcRT6!2@";
+                komento.Parameters.Add("@ssa", MySqlDbType.VarChar).Value = "xcxcRT6!2@";
             }
 
             yhteys.avaayhteys();
