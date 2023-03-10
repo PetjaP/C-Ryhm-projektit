@@ -13,7 +13,7 @@ namespace Hotellivarausjarjestelma
     class Yhdista
     {
         //   public string yhteyslause()
-        private MySqlConnection yhteys = new MySqlConnection("datasource=localhost; port=3306; username=root; password=; database=opiskelijat");
+        private MySqlConnection yhteys = new MySqlConnection("datasource=sql7.freesqldatabase.com; port=3306; username=sql7604185; password=JpwQnlPbS5; database=sql7604185");
         public MySqlConnection otaYhteys()
         {
             return yhteys;
