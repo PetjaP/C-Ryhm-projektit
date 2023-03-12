@@ -12,3 +12,16 @@ C:\Users\shcka\source\repos\PetjaP\C-Ryhm-projektit\Hotellivarausjarjestelma\obj
 C:\Users\shcka\source\repos\PetjaP\C-Ryhm-projektit\Hotellivarausjarjestelma\obj\Debug\Hotellivarausjarjestelma.exe.config
 C:\Users\shcka\source\repos\PetjaP\C-Ryhm-projektit\Hotellivarausjarjestelma\obj\Debug\Hotellivarausjarjestelma.Kirjautumisikkuna.resources
 C:\Users\shcka\source\repos\PetjaP\C-Ryhm-projektit\Hotellivarausjarjestelma\obj\Debug\Hotellivarausjarjestelma.PaaikkunaForm.resources
+C:\Users\shcka\source\repos\PetjaP\C-Ryhm-projektit\Hotellivarausjarjestelma\bin\Debug\MySql.Data.dll
+C:\Users\shcka\source\repos\PetjaP\C-Ryhm-projektit\Hotellivarausjarjestelma\bin\Debug\Google.Protobuf.dll
+C:\Users\shcka\source\repos\PetjaP\C-Ryhm-projektit\Hotellivarausjarjestelma\bin\Debug\Zstandard.Net.dll
+C:\Users\shcka\source\repos\PetjaP\C-Ryhm-projektit\Hotellivarausjarjestelma\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\shcka\source\repos\PetjaP\C-Ryhm-projektit\Hotellivarausjarjestelma\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\shcka\source\repos\PetjaP\C-Ryhm-projektit\Hotellivarausjarjestelma\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\shcka\source\repos\PetjaP\C-Ryhm-projektit\Hotellivarausjarjestelma\bin\Debug\Renci.SshNet.dll
+C:\Users\shcka\source\repos\PetjaP\C-Ryhm-projektit\Hotellivarausjarjestelma\bin\Debug\System.Buffers.dll
+C:\Users\shcka\source\repos\PetjaP\C-Ryhm-projektit\Hotellivarausjarjestelma\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\shcka\source\repos\PetjaP\C-Ryhm-projektit\Hotellivarausjarjestelma\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\shcka\source\repos\PetjaP\C-Ryhm-projektit\Hotellivarausjarjestelma\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\shcka\source\repos\PetjaP\C-Ryhm-projektit\Hotellivarausjarjestelma\bin\Debug\MySql.Data.xml
+C:\Users\shcka\source\repos\PetjaP\C-Ryhm-projektit\Hotellivarausjarjestelma\obj\Debug\Hotellivarausjarjestelma.csproj.CopyComplete

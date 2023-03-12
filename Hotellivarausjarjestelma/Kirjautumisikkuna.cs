@@ -17,7 +17,6 @@ namespace Hotellivarausjarjestelma
         {
             InitializeComponent();
         }
-
         private void KirjauduBT_Click(object sender, EventArgs e)
         {
             // Käytetään itse luotua luokkaa
@@ -46,7 +45,8 @@ namespace Hotellivarausjarjestelma
             {
                 // Lomakkeen piiloitus ja avataan pääikkuna.
                 this.Hide();
-                Paaikkuna plomake = new Paaikkuna();
+               // Paaikkuna plomake = new Paaikkuna();
+                PaaikkunaForm plomake = new PaaikkunaForm();
                 plomake.Show();
             }
             else  // Muussa tapauksessa tarkistetaan jos jompikumpi on tyhjä
