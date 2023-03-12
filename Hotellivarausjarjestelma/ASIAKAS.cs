@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
@@ -42,7 +43,7 @@ namespace Hotellivarausjarjestelma
                 komento.Parameters.Add("@ssa", MySqlDbType.VarChar).Value = "xcxcRT6!2@";
             }
 
-            yhteys.avaayhteys();
+            yhteys.avaaYhteys();
             if(komento.ExecuteNonQuery() == 1)
             {
                 yhteys.suljeYhteys();
@@ -52,6 +53,75 @@ namespace Hotellivarausjarjestelma
             {
                 yhteys.avaaYhteys();
                 return false; 
+            }
+        }
+
+        //Luodaan funktio kaikkien asiakastietojan hakemiseksi 
+
+        public DataTable haeAsiakkaat()
+        {
+            MySqlCommand komento = new MySqlCommand("SELECT etunimi, sukunimi, lahiosoite, postinumero, postitoimipaikka, kayttajanimi FROM asiakkaat", yhteys.otaYhteys());
+            MySqlDataAdapter adapteri= new MySqlDataAdapter();
+            DataTable taulu = new DataTable();
+
+            adapteri.SelectCommand= komento;
+            adapteri.Fill(taulu);
+
+            return taulu;
+        }
+
+
+        //Luodaan funktio asiakkaan tietojen muokkaamiseksi
+
+        public bool muokkaaAsiakasta(String enimi, String snimi, String osoite, String pnro, String ppaikka, String ktunnus)
+        {
+            MySqlCommand komento = new MySqlCommand();
+            String paivityskysely = "UPDATE `asiakkaat` SET `etunimi` = @enm," + "`sukunimi` = @snm, `lahiosoite` = @oso, `postinumero` = @pno, `postitoimipaikka` = @ptp" + " WHERE kayttajatunnus = @ktu";
+            komento.CommandText = paivityskysely;
+            komento.Connection = yhteys.otaYhteys();
+            
+            komento.Parameters.Add("@enm", MySqlDbType.VarChar).Value = enimi;
+            komento.Parameters.Add("@snm", MySqlDbType.VarChar).Value = snimi;
+            komento.Parameters.Add("@oso", MySqlDbType.VarChar).Value = osoite;
+            komento.Parameters.Add("@pno", MySqlDbType.VarChar).Value = pnro;
+            komento.Parameters.Add("@ptp", MySqlDbType.UInt32).Value = ppaikka;
+            komento.Parameters.Add("@ktu", MySqlDbType.UInt32).Value = ktunnus;
+
+
+            yhteys.avaaYhteys();
+            if(komento.ExecuteNonQuery() ==1)
+            {
+                yhteys.suljeYhteys();
+                return true;
+            }
+            else
+            {
+                yhteys.suljeYhteys();
+                return false;
+            }
+        }
+
+
+        //Luodaan funktio asiakkaan tietojen poistamiseen
+
+        public bool poistaAsiakas(String ktunnus)
+        {
+            MySqlCommand komento = new MySqlCommand();
+            String poistokysely = "DELETE FROM asiakkaat WHERE kayttajanimi = @ktu";
+            komento.CommandText = poistokysely;
+            komento.Connection = yhteys.otaYhteys();
+            komento.Parameters.Add("@ktu", MySqlDbType.VarChar).Value = ktunnus;
+
+            yhteys.avaaYhteys();
+            if (komento.ExecuteNonQuery() == 1)
+            {
+                yhteys.suljeYhteys();
+                return true;
+            }
+            else
+            {
+                yhteys.suljeYhteys();
+                return false;
             }
         }
     }

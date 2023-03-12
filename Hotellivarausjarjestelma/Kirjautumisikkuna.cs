@@ -64,5 +64,6 @@ namespace Hotellivarausjarjestelma
                     MessageBox.Show("Käyttäjänimeä tai salasanaa ei löydy", "Tietoja ei löydy", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }     
+        }
     }
 }
