@@ -76,7 +76,7 @@ namespace Hotellivarausjarjestelma
         public bool muokkaaAsiakasta(String enimi, String snimi, String osoite, String pnro, String ppaikka, String ktunnus)
         {
             MySqlCommand komento = new MySqlCommand();
-            String paivityskysely = "UPDATE `asiakkaat` SET `etunimi` = @enm," + "`sukunimi` = @snm, `lahiosoite` = @oso, `postinumero` = @pno, `postitoimipaikka` = @ptp" + " WHERE kayttajatunnus = @ktu";
+            String paivityskysely = "UPDATE `asiakkaat` SET `etunimi` = @enm," + "`sukunimi` = @snm, `lahiosoite` = @oso, `postinumero` = @pno, `postitoimipaikka` = @ptp" + " WHERE kayttajanimi = @ktu";
             komento.CommandText = paivityskysely;
             komento.Connection = yhteys.otaYhteys();
             
@@ -84,19 +84,19 @@ namespace Hotellivarausjarjestelma
             komento.Parameters.Add("@snm", MySqlDbType.VarChar).Value = snimi;
             komento.Parameters.Add("@oso", MySqlDbType.VarChar).Value = osoite;
             komento.Parameters.Add("@pno", MySqlDbType.VarChar).Value = pnro;
-            komento.Parameters.Add("@ptp", MySqlDbType.UInt32).Value = ppaikka;
-            komento.Parameters.Add("@ktu", MySqlDbType.UInt32).Value = ktunnus;
+            komento.Parameters.Add("@ptp", MySqlDbType.VarChar).Value = ppaikka;
+            komento.Parameters.Add("@ktu", MySqlDbType.VarChar).Value = ktunnus;
 
 
             yhteys.avaaYhteys();
-            if(komento.ExecuteNonQuery() ==1)
+            if(komento.ExecuteNonQuery() == 1)
             {
                 yhteys.suljeYhteys();
                 return true;
             }
             else
             {
-                yhteys.suljeYhteys();
+                yhteys.avaaYhteys();
                 return false;
             }
         }

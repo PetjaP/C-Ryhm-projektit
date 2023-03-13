@@ -104,6 +104,7 @@
             this.postiTPLB.Size = new System.Drawing.Size(133, 18);
             this.postiTPLB.TabIndex = 4;
             this.postiTPLB.Text = "Postitoimipaikka";
+            this.postiTPLB.Click += new System.EventHandler(this.postiTPLB_Click);
             // 
             // kauttajaTunnusLB
             // 
@@ -270,6 +271,7 @@
             this.asiakkaatDG.Size = new System.Drawing.Size(391, 273);
             this.asiakkaatDG.TabIndex = 18;
             this.asiakkaatDG.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.asiakkaatDG_CellClick);
+            this.asiakkaatDG.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.asiakkaatDG_CellContentClick);
             // 
             // AsiakkaidenHallinta
             // 
