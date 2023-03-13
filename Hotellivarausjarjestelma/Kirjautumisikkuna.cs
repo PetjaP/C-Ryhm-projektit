@@ -24,24 +24,26 @@ namespace Hotellivarausjarjestelma
             //Muuttujat yhdistämistä varten
             DataTable taulu = new DataTable();
             MySqlDataAdapter adapteri = new MySqlDataAdapter();
+            
             MySqlCommand komento = new MySqlCommand();
-
+           
             // Luodaan kysely
-            String kysely = "SELECT kayttajanimi, salasana FROM asiakkaat WHERE kayttajanimi = @kn AND salasana = @ss";
+            String kysely = "SELECT kayttajanimi, salasana FROM asiakkaat WHERE kayttajanimi = @ktu AND salasana = @ssa";
 
             komento.CommandText = kysely;
             komento.Connection = tietokantaan.otaYhteys();
 
             // Lisätään lomakkeelta tiedot @kn ja @ss muuttujiin
-            komento.Parameters.Add("@kn", MySqlDbType.VarChar).Value = kayttajaTunnusTB.Text;
-            komento.Parameters.Add("@ss", MySqlDbType.VarChar).Value = salaSanaTB.Text;
+            komento.Parameters.Add("@ktu", MySqlDbType.VarChar).Value = kayttajaTunnusTB.Text;
+            komento.Parameters.Add("@ssa", MySqlDbType.VarChar).Value = salaSanaTB.Text;
 
             adapteri.SelectCommand= komento;
             adapteri.Fill(taulu); // Täyttää taulua
+     
 
             // Tarkistetaan, että ovat salasana ja käyttäjätunnus tietokannassa.
             // Jos rivi tulee, niin nämä löytyivät tietokannasta
-            if(taulu.Rows.Count > 0) 
+            if (taulu.Rows.Count > 0) 
             {
                 // Lomakkeen piiloitus ja avataan pääikkuna.
                 this.Hide();
@@ -64,6 +66,8 @@ namespace Hotellivarausjarjestelma
                     MessageBox.Show("Käyttäjänimeä tai salasanaa ei löydy", "Tietoja ei löydy", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }     
-        }
+        }   
+
+
     }
 }
