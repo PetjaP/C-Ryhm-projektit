@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Kirjautumisikkuna));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,10 +45,12 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(188, 8);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(235, 11);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(134, 126);
+            this.pictureBox1.Size = new System.Drawing.Size(219, 133);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -58,14 +61,14 @@
             this.panel1.Location = new System.Drawing.Point(8, 148);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(520, 48);
+            this.panel1.Size = new System.Drawing.Size(673, 70);
             this.panel1.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(130, 6);
+            this.label1.Location = new System.Drawing.Point(168, 6);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(352, 55);
@@ -80,10 +83,10 @@
             this.panel2.Controls.Add(this.kayttajaTunnusTB);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(8, 212);
+            this.panel2.Location = new System.Drawing.Point(8, 222);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(520, 159);
+            this.panel2.Size = new System.Drawing.Size(673, 194);
             this.panel2.TabIndex = 2;
             // 
             // KirjauduBT
@@ -92,7 +95,7 @@
             this.KirjauduBT.Location = new System.Drawing.Point(2, 121);
             this.KirjauduBT.Margin = new System.Windows.Forms.Padding(2);
             this.KirjauduBT.Name = "KirjauduBT";
-            this.KirjauduBT.Size = new System.Drawing.Size(502, 36);
+            this.KirjauduBT.Size = new System.Drawing.Size(669, 69);
             this.KirjauduBT.TabIndex = 4;
             this.KirjauduBT.Text = "Kirjaudu";
             this.KirjauduBT.UseVisualStyleBackColor = true;
@@ -101,7 +104,7 @@
             // salaSanaTB
             // 
             this.salaSanaTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.salaSanaTB.Location = new System.Drawing.Point(175, 73);
+            this.salaSanaTB.Location = new System.Drawing.Point(305, 74);
             this.salaSanaTB.Margin = new System.Windows.Forms.Padding(2);
             this.salaSanaTB.Name = "salaSanaTB";
             this.salaSanaTB.Size = new System.Drawing.Size(330, 35);
@@ -110,7 +113,7 @@
             // kayttajaTunnusTB
             // 
             this.kayttajaTunnusTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kayttajaTunnusTB.Location = new System.Drawing.Point(175, 14);
+            this.kayttajaTunnusTB.Location = new System.Drawing.Point(305, 16);
             this.kayttajaTunnusTB.Margin = new System.Windows.Forms.Padding(2);
             this.kayttajaTunnusTB.Name = "kayttajaTunnusTB";
             this.kayttajaTunnusTB.Size = new System.Drawing.Size(330, 35);
