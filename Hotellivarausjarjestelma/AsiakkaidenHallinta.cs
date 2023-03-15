@@ -19,6 +19,12 @@ namespace Hotellivarausjarjestelma
         public AsiakkaidenHallinta()
         {
             InitializeComponent();
+            asiakkaatDG.DataSource = asiakas.haeAsiakkaat();
+        }
+
+        private void AsiakkaidenHallinta_Load(object sender, EventArgs e, DataGridView asiakkatDG)
+        {
+            asiakkaatDG.DataSource = asiakas.haeAsiakkaat();
         }
 
        
@@ -31,6 +37,7 @@ namespace Hotellivarausjarjestelma
         private void poistaBT_Click(object sender, EventArgs e)
         {
             String ktunnus = kauttajaTunnusTB.Text;
+            asiakkaatDG.DataSource = asiakas.haeAsiakkaat();
             if (asiakas.poistaAsiakas(ktunnus))
             {
                 asiakkaatDG.DataSource = asiakas.haeAsiakkaat();
@@ -84,7 +91,7 @@ namespace Hotellivarausjarjestelma
             sNimiTB.Text = asiakkaatDG.CurrentRow.Cells[1].Value.ToString();
             osoiteTB.Text = asiakkaatDG.CurrentRow.Cells[2].Value.ToString();
             postiNumeroTB.Text = asiakkaatDG.CurrentRow.Cells[2].Value.ToString();
-            postiTPLB.Text = asiakkaatDG.CurrentRow.Cells[2].Value.ToString();
+            postiTPTB.Text = asiakkaatDG.CurrentRow.Cells[2].Value.ToString();
             kauttajaTunnusTB.Text = asiakkaatDG.CurrentRow.Cells[2].Value.ToString();
 
         }
@@ -99,8 +106,11 @@ namespace Hotellivarausjarjestelma
             String ssana = salasanaTB.Text;
             String kayttaja = kauttajaTunnusTB.Text;
 
+            asiakkaatDG.DataSource = asiakas.haeAsiakkaat();
+
             if (enimi.Trim().Equals("") || snimi.Trim().Equals("") || osoite.Trim().Equals("") || pnro.Equals("") || ppaikka.Equals(""))
             {
+                
                 MessageBox.Show("VIRHE - Vaaditut kentät - Etu- ja sukunimi, osoite, postinumero ja postitoimipaikka", "Tyhjä kenttä", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
@@ -127,6 +137,16 @@ namespace Hotellivarausjarjestelma
             postiTPTB.Text = "";
             salasanaTB.Text = "";
             kauttajaTunnusTB.Text = "";
+        }
+
+        private void asiakkaatDG_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void postiTPLB_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

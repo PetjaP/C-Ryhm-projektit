@@ -54,6 +54,7 @@
     <Compile Include="AsiakkaidenHallinta.Designer.cs">
       <DependentUpon>AsiakkaidenHallinta.cs</DependentUpon>
     </Compile>
+    <Compile Include="HUONE.cs" />
     <Compile Include="Kirjautumisikkuna.cs">
       <SubType>Form</SubType>
     </Compile>
