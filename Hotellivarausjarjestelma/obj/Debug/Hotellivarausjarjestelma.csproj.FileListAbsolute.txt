@@ -54,3 +54,4 @@ C:\Users\roku8\source\repos\PetjaP\C-Ryhm-projektit\Hotellivarausjarjestelma\obj
 C:\Users\roku8\source\repos\PetjaP\C-Ryhm-projektit\Hotellivarausjarjestelma\obj\Debug\Hotellivarausjarjestelma.exe
 C:\Users\roku8\source\repos\PetjaP\C-Ryhm-projektit\Hotellivarausjarjestelma\obj\Debug\Hotellivarausjarjestelma.pdb
 C:\Users\shcka\source\repos\PetjaP\C-Ryhm-projektit\Hotellivarausjarjestelma\obj\Debug\Hotellivarausjarjestelma.Varaustenhallinta.resources
+C:\Users\shcka\source\repos\PetjaP\C-Ryhm-projektit\Hotellivarausjarjestelma\obj\Debug\Hotellivarausjarjestelma.HuoneidenHallinta.resources
