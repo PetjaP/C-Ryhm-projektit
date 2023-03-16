@@ -55,7 +55,7 @@ namespace Hotellivarausjarjestelma
 
         public DataTable haeHuoneet()
         {
-            MySqlCommand komento = new MySqlCommand("SELECT FROM huoneet", yhteys.otaYhteys());
+            MySqlCommand komento = new MySqlCommand("SELECT * FROM huoneet", yhteys.otaYhteys());
             MySqlDataAdapter adapteri = new MySqlDataAdapter();
             DataTable taulu = new DataTable();
 
@@ -69,7 +69,7 @@ namespace Hotellivarausjarjestelma
 
         public DataTable huonetyyppilista()
         {
-            MySqlCommand komento = new MySqlCommand("SELECT FROM huonekategoria", yhteys.otaYhteys());
+            MySqlCommand komento = new MySqlCommand("SELECT * FROM huonekategoria", yhteys.otaYhteys());
             MySqlDataAdapter adapteri = new MySqlDataAdapter();
             DataTable taulu = new DataTable();
 
@@ -85,7 +85,7 @@ namespace Hotellivarausjarjestelma
         public bool muokkaaHuonetta(int hnro, int htyyppi, String puh, String vapaa)
         {
             MySqlCommand komento = new MySqlCommand();
-            String paivityskysely = "UPDATE `huoneet` SET `huoneTyyppi` = @hny," + "`puhelin` = @puh, `vapaa` = @vap" + " WHERE huoneenNro = @hno";
+            String paivityskysely = "UPDATE `huoneet` SET `huoneTyyppi` = @hty, `puhelin` =@puh, `vapaa` =@vap  WHERE `huoneenNumero` =@hno";
             komento.CommandText = paivityskysely;
             komento.Connection = yhteys.otaYhteys();
 
@@ -115,10 +115,10 @@ namespace Hotellivarausjarjestelma
         public bool poistaHuone(String hnro)
         {
             MySqlCommand komento = new MySqlCommand();
-            String poistokysely = "DELETE FROM huoneet WHERE huoneenNro = @hno";
+            String poistokysely = "DELETE FROM huoneet WHERE huoneenNumero = @hno";
             komento.CommandText = poistokysely;
             komento.Connection = yhteys.otaYhteys();
-            komento.Parameters.Add("@ktu", MySqlDbType.VarChar).Value = hnro;
+            komento.Parameters.Add("@hno", MySqlDbType.VarChar).Value = hnro;
 
             yhteys.avaaYhteys();
             if (komento.ExecuteNonQuery() == 1)

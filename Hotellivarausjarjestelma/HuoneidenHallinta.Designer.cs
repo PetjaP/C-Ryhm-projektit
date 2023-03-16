@@ -75,7 +75,7 @@
             this.huoneetDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.huoneetDG.Location = new System.Drawing.Point(410, 102);
             this.huoneetDG.Name = "huoneetDG";
-            this.huoneetDG.Size = new System.Drawing.Size(670, 261);
+            this.huoneetDG.Size = new System.Drawing.Size(445, 261);
             this.huoneetDG.TabIndex = 2;
             this.huoneetDG.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.huoneetDG_CellClick);
             // 
@@ -224,7 +224,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightYellow;
-            this.ClientSize = new System.Drawing.Size(1092, 405);
+            this.ClientSize = new System.Drawing.Size(891, 405);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);

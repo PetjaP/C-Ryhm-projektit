@@ -15,6 +15,10 @@ namespace Hotellivarausjarjestelma
         public HuoneidenHallinta()
         {
             InitializeComponent();
+            huoneetDG.DataSource = huone.haeHuoneet();
+            huoneTyyppiCB.DataSource = huone.huonetyyppilista();
+            huoneTyyppiCB.DisplayMember = "huoneTyyppi";
+            huoneTyyppiCB.ValueMember = "kategoriaID";
         }
         HUONE huone = new HUONE();
 
@@ -31,7 +35,8 @@ namespace Hotellivarausjarjestelma
         private void uusiHuoneBT_Click(object sender, EventArgs e)
         {
             int numero = Convert.ToInt32(huoneenNumeroTB.Text);
-            int tyyppi = Convert.ToInt32(huoneTyyppiCB.Text);
+            int tyyppi = Convert.ToInt32(huoneTyyppiCB.SelectedValue.ToString());
+           // String tyyppi = huoneTyyppiCB.Text;
             String puhelin = puhelinTB.Text;
             if(huone.lisaaHuone(numero, tyyppi, puhelin, "Kyllä"))
             {
@@ -54,9 +59,20 @@ namespace Hotellivarausjarjestelma
 
         private void huoneetDG_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            huoneenNumeroTB.Text = huoneetDG.CurrentRow.Cells[0].Value.ToString();
-            huoneTyyppiCB.SelectedValue = huoneetDG.CurrentRow.Cells[1].Value.ToString();
-            puhelinTB.Text = huoneetDG.CurrentRow.Cells[2].Value.ToString();
+            try
+               {
+
+            
+                huoneenNumeroTB.Text = huoneetDG.CurrentRow.Cells[0].Value.ToString();
+                huoneTyyppiCB.SelectedValue = huoneetDG.CurrentRow.Cells[1].Value.ToString();
+                puhelinTB.Text = huoneetDG.CurrentRow.Cells[2].Value.ToString();
+
+                }
+            catch
+            {
+                MessageBox.Show("Huone on tyhjä", "Huone on tyhjä", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void muokkaaBT_Click(object sender, EventArgs e)
@@ -71,7 +87,7 @@ namespace Hotellivarausjarjestelma
                 {
                     vapaa = "Kyllä";
                 }
-                else
+                else if(eiRB.Checked)
                 {
                     vapaa = "Ei";
 
@@ -79,6 +95,7 @@ namespace Hotellivarausjarjestelma
                 if(huone.muokkaaHuonetta(numero,tyyppi, puhelin, vapaa))
                 {
                     MessageBox.Show("Huone muokattu onnistuneesti", "Huoneen muokkaus", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
 
                 }
                 else
