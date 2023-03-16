@@ -55,6 +55,12 @@
       <DependentUpon>AsiakkaidenHallinta.cs</DependentUpon>
     </Compile>
     <Compile Include="HUONE.cs" />
+    <Compile Include="HuoneidenHallinta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HuoneidenHallinta.Designer.cs">
+      <DependentUpon>HuoneidenHallinta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Kirjautumisikkuna.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     <Compile Include="Yhdista.cs" />
     <EmbeddedResource Include="AsiakkaidenHallinta.resx">
       <DependentUpon>AsiakkaidenHallinta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HuoneidenHallinta.resx">
+      <DependentUpon>HuoneidenHallinta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Kirjautumisikkuna.resx">
       <DependentUpon>Kirjautumisikkuna.cs</DependentUpon>

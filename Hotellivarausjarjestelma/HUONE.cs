@@ -53,6 +53,20 @@ namespace Hotellivarausjarjestelma
 
         //Luodaan funktio kaikkien huoneiden listaamiseksi 
 
+        public DataTable haeHuoneet()
+        {
+            MySqlCommand komento = new MySqlCommand("SELECT FROM huoneet", yhteys.otaYhteys());
+            MySqlDataAdapter adapteri = new MySqlDataAdapter();
+            DataTable taulu = new DataTable();
+
+            adapteri.SelectCommand = komento;
+            adapteri.Fill(taulu);
+
+            return taulu;
+        }
+
+        //Luodaan funktio huonetyypien listaamiseksi
+
         public DataTable huonetyyppilista()
         {
             MySqlCommand komento = new MySqlCommand("SELECT FROM huonekategoria", yhteys.otaYhteys());
