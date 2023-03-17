@@ -26,7 +26,7 @@ namespace Hotellivarausjarjestelma
             int huone = Convert.ToInt32(huoneenNroCB.SelectedValue.ToString());
             DateTime sisaankirjautuminen = Convert.ToDateTime(sisaanDTP.Value);
             DateTime uloskirjautuminen = Convert.ToDateTime(ulosDTP.Value);
-
+           
             if (varaus.lisaaVaraus(huone, asiakas, sisaankirjautuminen, uloskirjautuminen))
             {
                 MessageBox.Show("Varaus lisätty onnistuneesti", "Varauksen lisäys", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -45,7 +45,7 @@ namespace Hotellivarausjarjestelma
             // Silti lähetetään eteenpäin kategoriaId (ValueMember)
             huoneTyyppiCB.DataSource = huone.huonetyyppilista();
             huoneTyyppiCB.DisplayMember = "huoneTyyppi";
-            huoneTyyppiCB.ValueMember = "KategoriaId";
+            huoneTyyppiCB.ValueMember = "kategoriaID";
 
             asiakasNroCB.DataSource = asiakas.haeAsiakkaat();
             asiakasNroCB.DisplayMember = "Kokonimi";
@@ -59,9 +59,9 @@ namespace Hotellivarausjarjestelma
             int htyyppi = huoneTyyppiCB.SelectedIndex + 1;
 
             // Huoneiden numero haku huonetyyppien perusteella
-            huoneenNroCB.DataSource = huone.huonetyyppilista(htyyppi);
-            huoneenNroCB.DisplayMember = "huoneenNro";
-            huoneenNroCB.ValueMember = "huoneenNro";
+            huoneenNroCB.DataSource = huone.huonetyyppilista();
+            huoneenNroCB.DisplayMember = "huoneenNumero";
+            huoneenNroCB.ValueMember = "huoneenNumero";
         }
         private void muokkaaBT_Click(object sender, EventArgs e)
         {
@@ -86,9 +86,16 @@ namespace Hotellivarausjarjestelma
             {
                 MessageBox.Show("Virhe: " + ex.Message, "Huoneen numero virhe!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            varauksetDG.Datasource = varaus.haeVaraukset();
+            varauksetDG.DataSource = varaus.haeVaraukset();
         }
-
+        private void varauksetDG_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            varausNroTB.Text = varauksetDG.CurrentRow.Cells[0].Value.ToString();
+            asiakasNroCB.SelectedValue = varauksetDG.CurrentRow.Cells[2].Value.ToString();
+            huoneenNroCB.SelectedValue = varauksetDG.CurrentRow.Cells[1].Value.ToString();
+            sisaanDTP.Value = Convert.ToDateTime(varauksetDG.CurrentRow.Cells[3].Value);
+            ulosDTP.Value = Convert.ToDateTime(varauksetDG.CurrentRow.Cells[4].Value);
+        }
         private void poistaBT_Click(object sender, EventArgs e)
         {
             try

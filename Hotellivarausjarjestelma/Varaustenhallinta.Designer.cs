@@ -138,6 +138,7 @@
             this.varauksetDG.Name = "varauksetDG";
             this.varauksetDG.Size = new System.Drawing.Size(513, 410);
             this.varauksetDG.TabIndex = 7;
+            this.varauksetDG.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.varauksetDG_CellContentClick);
             // 
             // lisaaVarausBT
             // 

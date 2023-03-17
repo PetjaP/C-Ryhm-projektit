@@ -107,7 +107,7 @@ namespace Hotellivarausjarjestelma
             {
                 MessageBox.Show("Virhe: " + ex.Message, "Huoneen numero virhe", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            huoneetDG.DataSource = huone.haeHuoneet();
+         huoneetDG.DataSource = huone.haeHuoneet();
         }
 
         private void poistaBT_Click(object sender, EventArgs e)
