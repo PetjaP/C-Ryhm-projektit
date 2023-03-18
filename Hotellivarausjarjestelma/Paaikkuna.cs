@@ -24,17 +24,20 @@ namespace Hotellivarausjarjestelma
 
         private void hallitseAsiakkaitaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            AsiakkaidenHallinta asiHallinta = new AsiakkaidenHallinta();
+            asiHallinta.Show();
         }
 
         private void hallitseHuoneitaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Varaustenhallinta varKallinta = new Varaustenhallinta();
+            varKallinta.Show();
         }
 
         private void hallitseHuoneitaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            HuoneidenHallinta huoHallinta = new HuoneidenHallinta();
+            huoHallinta.Show();
         }
     }
 }
