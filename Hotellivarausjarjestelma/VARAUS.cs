@@ -51,8 +51,8 @@ namespace Hotellivarausjarjestelma
             //@hno @aid @sis @ulo
             komento.Parameters.Add("@hno", MySqlDbType.Int32).Value = hnro;
             komento.Parameters.Add("@aid", MySqlDbType.Int32).Value = anro;
-            komento.Parameters.Add("@sis", MySqlDbType.DateTime).Value = sisaan;
-            komento.Parameters.Add("@ulo", MySqlDbType.DateTime).Value = ulos;
+            komento.Parameters.Add("@sis", MySqlDbType.Date).Value = sisaan;
+            komento.Parameters.Add("@ulo", MySqlDbType.Date).Value = ulos;
             yhteys.avaaYhteys();
             try
             {
@@ -85,8 +85,8 @@ namespace Hotellivarausjarjestelma
             // @hno @aid @sis @ulo @vid
             komento.Parameters.Add("@hno", MySqlDbType.Int32).Value = hnro;
             komento.Parameters.Add("@aid", MySqlDbType.Int32).Value = asid;
-            komento.Parameters.Add("@sis", MySqlDbType.DateTime).Value = sisaan;
-            komento.Parameters.Add("@ulo", MySqlDbType.DateTime).Value = ulos;
+            komento.Parameters.Add("@sis", MySqlDbType.Date).Value = sisaan;
+            komento.Parameters.Add("@ulo", MySqlDbType.Date).Value = ulos;
             komento.Parameters.Add("@vid", MySqlDbType.Int32).Value = vara;
 
             yhteys.avaaYhteys();

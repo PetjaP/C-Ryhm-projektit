@@ -218,6 +218,7 @@
             this.sisaanDTP.Name = "sisaanDTP";
             this.sisaanDTP.Size = new System.Drawing.Size(239, 31);
             this.sisaanDTP.TabIndex = 16;
+           
             // 
             // ulosDTP
             // 

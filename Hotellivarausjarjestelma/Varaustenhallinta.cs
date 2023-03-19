@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Hotellivarausjarjestelma
 {
@@ -49,7 +50,7 @@ namespace Hotellivarausjarjestelma
 
             asiakasNroCB.DataSource = asiakas.haeAsiakkaat();
             asiakasNroCB.DisplayMember = "Kokonimi";
-            asiakasNroCB.ValueMember = "asiakasId";
+            asiakasNroCB.ValueMember = "kayttajanimi";
             varauksetDG.DataSource = varaus.haeVaraukset();
 
         }
@@ -60,8 +61,8 @@ namespace Hotellivarausjarjestelma
 
             // Huoneiden numero haku huonetyyppien perusteella
             huoneenNroCB.DataSource = huone.huonetyyppilista();
-            huoneenNroCB.DisplayMember = "huoneenNumero";
-            huoneenNroCB.ValueMember = "huoneenNumero";
+            huoneenNroCB.DisplayMember = "huoneTyyppi";
+            huoneenNroCB.ValueMember = "huoneTyyppi";
         }
         private void muokkaaBT_Click(object sender, EventArgs e)
         {
@@ -121,9 +122,14 @@ namespace Hotellivarausjarjestelma
         private void tyhjennaBT_Click(object sender, EventArgs e)
         {
             varausNroTB.Text = "";
+            asiakasNroCB.SelectedIndex = -1;
+            huoneTyyppiCB.SelectedIndex = 0;
+            huoneenNroCB.SelectedIndex = 0;
+            sisaanDTP.Value = DateTime.Now;
+            ulosDTP.Value = DateTime.Now;
 
         }
 
-       
+
     }
 }
