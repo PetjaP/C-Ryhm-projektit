@@ -11,26 +11,27 @@ using MySql.Data.MySqlClient;
 
 namespace Hotellivarausjarjestelma
 {
-    public partial class Varaustenhallinta : Form
+    public partial class testLB : Form
     {
         HUONE huone = new HUONE();
         ASIAKAS asiakas = new ASIAKAS();
         VARAUS varaus = new VARAUS();
-        public Varaustenhallinta()
+        public testLB()
         {
             InitializeComponent();
         }
 
         private void lisaaVarausBT_Click(object sender, EventArgs e)
         {
-            int asiakas = Convert.ToInt32(asiakasNroCB.SelectedValue.ToString());
+            int asiakas = Convert.ToInt32(asiakasNroCB.SelectedIndex.ToString());
             int huone = Convert.ToInt32(huoneenNroCB.SelectedValue.ToString());
             DateTime sisaankirjautuminen = Convert.ToDateTime(sisaanDTP.Value);
             DateTime uloskirjautuminen = Convert.ToDateTime(ulosDTP.Value);
+
            
             if (varaus.lisaaVaraus(huone, asiakas, sisaankirjautuminen, uloskirjautuminen))
             {
-                MessageBox.Show("Varaus lisätty onnistuneesti", "Varauksen lisäys", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Varaus lisätty onnistuneesti", "Varauksen lisäys", MessageBoxButtons.OK, MessageBoxIcon.Information);               
             }
             else
             {
@@ -60,8 +61,8 @@ namespace Hotellivarausjarjestelma
             int htyyppi = huoneTyyppiCB.SelectedIndex + 1;
 
             // Huoneiden numero haku huonetyyppien perusteella
-            huoneenNroCB.DataSource = huone.huonetyyppilista();
-            huoneenNroCB.DisplayMember = "huoneTyyppi";
+            huoneenNroCB.DataSource = huone.haeHuoneet();
+            huoneenNroCB.DisplayMember = "huoneenNumero";
             huoneenNroCB.ValueMember = "huoneTyyppi";
         }
         private void muokkaaBT_Click(object sender, EventArgs e)

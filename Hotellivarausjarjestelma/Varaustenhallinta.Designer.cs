@@ -1,6 +1,6 @@
 ﻿namespace Hotellivarausjarjestelma
 {
-    partial class Varaustenhallinta
+    partial class testLB
     {
         /// <summary>
         /// Required designer variable.
@@ -218,7 +218,6 @@
             this.sisaanDTP.Name = "sisaanDTP";
             this.sisaanDTP.Size = new System.Drawing.Size(239, 31);
             this.sisaanDTP.TabIndex = 16;
-           
             // 
             // ulosDTP
             // 
@@ -237,7 +236,7 @@
             this.asiakasNroCB.Size = new System.Drawing.Size(239, 33);
             this.asiakasNroCB.TabIndex = 18;
             // 
-            // Varaustenhallinta
+            // testLB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -261,7 +260,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
-            this.Name = "Varaustenhallinta";
+            this.Name = "testLB";
             this.Text = "Varaustenhallinta";
             this.Load += new System.EventHandler(this.Varaustenhallinta_Load);
             this.panel1.ResumeLayout(false);

@@ -30,7 +30,7 @@ namespace Hotellivarausjarjestelma
 
         private void hallitseHuoneitaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Varaustenhallinta varKallinta = new Varaustenhallinta();
+            testLB varKallinta = new testLB();
             varKallinta.Show();
         }
 
