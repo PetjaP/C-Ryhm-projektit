@@ -61,9 +61,9 @@ namespace Hotellivarausjarjestelma
             int htyyppi = huoneTyyppiCB.SelectedIndex + 1;
 
             // Huoneiden numero haku huonetyyppien perusteella
-            huoneenNroCB.DataSource = huone.haeHuoneet();
+            huoneenNroCB.DataSource = huone.tyyppilisetHuoneet(htyyppi);
             huoneenNroCB.DisplayMember = "huoneenNumero";
-            huoneenNroCB.ValueMember = "huoneTyyppi";
+            huoneenNroCB.ValueMember = "huoneenNumero";
 
            
         }
@@ -94,12 +94,18 @@ namespace Hotellivarausjarjestelma
         }
         private void varauksetDG_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            
+        }
+
+        private void varauksetDG_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
             varausNroTB.Text = varauksetDG.CurrentRow.Cells[0].Value.ToString();
             asiakasNroCB.SelectedValue = varauksetDG.CurrentRow.Cells[2].Value.ToString();
             huoneenNroCB.SelectedValue = varauksetDG.CurrentRow.Cells[1].Value.ToString();
             sisaanDTP.Value = Convert.ToDateTime(varauksetDG.CurrentRow.Cells[3].Value);
             ulosDTP.Value = Convert.ToDateTime(varauksetDG.CurrentRow.Cells[4].Value);
         }
+
         private void poistaBT_Click(object sender, EventArgs e)
         {
             try
@@ -126,13 +132,14 @@ namespace Hotellivarausjarjestelma
         {
             varausNroTB.Text = "";
             asiakasNroCB.SelectedIndex = -1;
-            huoneTyyppiCB.SelectedIndex = 0;
             huoneenNroCB.SelectedIndex = 0;
+            huoneTyyppiCB.SelectedIndex = 0;
+            
             sisaanDTP.Value = DateTime.Now;
             ulosDTP.Value = DateTime.Now;
 
         }
 
-
+       
     }
 }

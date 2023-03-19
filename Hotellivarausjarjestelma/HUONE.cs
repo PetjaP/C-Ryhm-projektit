@@ -79,6 +79,22 @@ namespace Hotellivarausjarjestelma
             return taulu;
         }
 
+        //Tämä avulla haetaan huoneet Varauslomakkeelle sen mukaan, mitä huonetyypiksi on merkitty
+        public DataTable tyyppilisetHuoneet(int htyyppi)
+        {
+            MySqlCommand komento = new MySqlCommand();
+            String lisayskysely = "SELECT * from huoneet WHERE Huonetyyppi = @hty";
+            komento.CommandText = lisayskysely;
+            komento.Connection = yhteys.otaYhteys();
+
+            komento.Parameters.Add("@hty", MySqlDbType.Int32).Value = htyyppi;
+            MySqlDataAdapter adapteri = new MySqlDataAdapter();
+            DataTable taulu = new DataTable();
+            adapteri.SelectCommand = komento;
+            adapteri.Fill(taulu);
+            return taulu;
+        }
+
 
         //Luodaan funktio asiakkaan huoneen muokkaamiseksi
 

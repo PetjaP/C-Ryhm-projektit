@@ -108,7 +108,7 @@ namespace Hotellivarausjarjestelma
             komento.CommandText = poistokysely;
             komento.Connection = yhteys.otaYhteys();
             //ktu
-            komento.Parameters.Add("@vno", MySqlDbType.VarChar).Value = varausnro;
+            komento.Parameters.Add("@vno", MySqlDbType.Int32).Value = varausnro;
 
             yhteys.avaaYhteys();
             if (komento.ExecuteNonQuery()==1)
