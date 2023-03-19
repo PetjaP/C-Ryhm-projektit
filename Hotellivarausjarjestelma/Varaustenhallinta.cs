@@ -70,7 +70,7 @@ namespace Hotellivarausjarjestelma
         private void muokkaaBT_Click(object sender, EventArgs e)
         {
             int huone = Convert.ToInt32(huoneenNroCB.SelectedValue.ToString());
-            int asiakas = Convert.ToInt32(asiakasNroCB.SelectedValue.ToString());
+            int asiakas = Convert.ToInt32(asiakasNroCB.SelectedIndex.ToString());
             DateTime sisaan = Convert.ToDateTime(sisaanDTP.Value);
             DateTime ulos = Convert.ToDateTime(ulosDTP.Value);
             try
@@ -100,8 +100,8 @@ namespace Hotellivarausjarjestelma
         private void varauksetDG_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             varausNroTB.Text = varauksetDG.CurrentRow.Cells[0].Value.ToString();
-            asiakasNroCB.SelectedValue = varauksetDG.CurrentRow.Cells[2].Value.ToString();
-            huoneenNroCB.SelectedValue = varauksetDG.CurrentRow.Cells[1].Value.ToString();
+            huoneenNroCB.SelectedValue = Convert.ToInt32(varauksetDG.CurrentRow.Cells[1].Value.ToString());
+            asiakasNroCB.SelectedIndex = Convert.ToInt32(varauksetDG.CurrentRow.Cells[2].Value.ToString());            
             sisaanDTP.Value = Convert.ToDateTime(varauksetDG.CurrentRow.Cells[3].Value);
             ulosDTP.Value = Convert.ToDateTime(varauksetDG.CurrentRow.Cells[4].Value);
         }

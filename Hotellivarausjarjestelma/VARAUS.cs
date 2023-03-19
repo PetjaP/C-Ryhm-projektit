@@ -77,8 +77,8 @@ namespace Hotellivarausjarjestelma
         public bool muokkaaVarausta(int hnro, int aid, DateTime sisaan, DateTime ulos, int vara)
         {
             MySqlCommand komento = new MySqlCommand();
-            String paivityskysely = "UPDATE `varaukset´ SET `huoneenNro´= @hno," +
-                                    "`asiakasId´ = @aid,`sisaan´= @sis,`ulos´= @ulo" +
+            String paivityskysely = "UPDATE `varaukset` SET `huoneenNro`= @hno," +
+                                    "`asiakasId` = @aid,`sisaan`= @sis,`ulos`= @ulo" +
                                     " WHERE varausId = @vid";
             komento.CommandText = paivityskysely;
             komento.Connection = yhteys.otaYhteys();
