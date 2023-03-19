@@ -50,7 +50,7 @@ namespace Hotellivarausjarjestelma
             huoneTyyppiCB.ValueMember = "kategoriaID";
 
             asiakasNroCB.DataSource = asiakas.haeAsiakkaat();
-            asiakasNroCB.DisplayMember = "Kokonimi";
+            asiakasNroCB.DisplayMember = "etunimi" + "sukunimi";
             asiakasNroCB.ValueMember = "kayttajanimi";
             varauksetDG.DataSource = varaus.haeVaraukset();
 
@@ -64,6 +64,8 @@ namespace Hotellivarausjarjestelma
             huoneenNroCB.DataSource = huone.haeHuoneet();
             huoneenNroCB.DisplayMember = "huoneenNumero";
             huoneenNroCB.ValueMember = "huoneTyyppi";
+
+           
         }
         private void muokkaaBT_Click(object sender, EventArgs e)
         {
