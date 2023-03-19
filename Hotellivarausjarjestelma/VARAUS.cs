@@ -38,7 +38,7 @@ namespace Hotellivarausjarjestelma
             return taulu;
         }
         // Funktio asiakkaan tietojen lisäämiseksi
-        public bool lisaaVaraus(int hnro, int anro, DateTime sisaan, DateTime ulos)
+        public bool lisaaVaraus(int hnro, int aid, DateTime sisaan, DateTime ulos)
         {
             MySqlCommand komento = new MySqlCommand();
             String lisayskysely = "INSERT into `varaukset`" + "(huoneenNro, asiakasId, sisaan, ulos)" +
@@ -50,7 +50,7 @@ namespace Hotellivarausjarjestelma
             
             //@hno @aid @sis @ulo
             komento.Parameters.Add("@hno", MySqlDbType.Int32).Value = hnro;
-            komento.Parameters.Add("@aid", MySqlDbType.Int32).Value = anro;
+            komento.Parameters.Add("@aid", MySqlDbType.Int32).Value = aid;
             komento.Parameters.Add("@sis", MySqlDbType.Date).Value = sisaan;
             komento.Parameters.Add("@ulo", MySqlDbType.Date).Value = ulos;
             yhteys.avaaYhteys();
@@ -74,7 +74,7 @@ namespace Hotellivarausjarjestelma
             }  
             
         }   
-        public bool muokkaaVarausta(int hnro, int asid, DateTime sisaan, DateTime ulos, int vara)
+        public bool muokkaaVarausta(int hnro, int aid, DateTime sisaan, DateTime ulos, int vara)
         {
             MySqlCommand komento = new MySqlCommand();
             String paivityskysely = "UPDATE `varaukset´ SET `huoneenNro´= @hno," +
@@ -84,7 +84,7 @@ namespace Hotellivarausjarjestelma
             komento.Connection = yhteys.otaYhteys();
             // @hno @aid @sis @ulo @vid
             komento.Parameters.Add("@hno", MySqlDbType.Int32).Value = hnro;
-            komento.Parameters.Add("@aid", MySqlDbType.Int32).Value = asid;
+            komento.Parameters.Add("@aid", MySqlDbType.Int32).Value = aid;
             komento.Parameters.Add("@sis", MySqlDbType.Date).Value = sisaan;
             komento.Parameters.Add("@ulo", MySqlDbType.Date).Value = ulos;
             komento.Parameters.Add("@vid", MySqlDbType.Int32).Value = vara;
