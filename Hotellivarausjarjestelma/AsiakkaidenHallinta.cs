@@ -90,9 +90,9 @@ namespace Hotellivarausjarjestelma
             eNimiTB.Text = asiakkaatDG.CurrentRow.Cells[0].Value.ToString();
             sNimiTB.Text = asiakkaatDG.CurrentRow.Cells[1].Value.ToString();
             osoiteTB.Text = asiakkaatDG.CurrentRow.Cells[2].Value.ToString();
-            postiNumeroTB.Text = asiakkaatDG.CurrentRow.Cells[2].Value.ToString();
-            postiTPTB.Text = asiakkaatDG.CurrentRow.Cells[2].Value.ToString();
-            kauttajaTunnusTB.Text = asiakkaatDG.CurrentRow.Cells[2].Value.ToString();
+            postiNumeroTB.Text = asiakkaatDG.CurrentRow.Cells[3].Value.ToString();
+            postiTPTB.Text = asiakkaatDG.CurrentRow.Cells[4].Value.ToString();
+            kauttajaTunnusTB.Text = asiakkaatDG.CurrentRow.Cells[5].Value.ToString();
 
         }
 

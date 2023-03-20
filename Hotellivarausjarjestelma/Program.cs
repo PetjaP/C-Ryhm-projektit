@@ -16,7 +16,7 @@ namespace Hotellivarausjarjestelma
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PaaikkunaForm());
+            Application.Run(new Kirjautumisikkuna());
         }
     }
 }
