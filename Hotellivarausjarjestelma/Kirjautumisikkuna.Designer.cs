@@ -107,6 +107,7 @@
             this.salaSanaTB.Location = new System.Drawing.Point(305, 74);
             this.salaSanaTB.Margin = new System.Windows.Forms.Padding(2);
             this.salaSanaTB.Name = "salaSanaTB";
+            this.salaSanaTB.PasswordChar = '*';
             this.salaSanaTB.Size = new System.Drawing.Size(330, 35);
             this.salaSanaTB.TabIndex = 3;
             // 
