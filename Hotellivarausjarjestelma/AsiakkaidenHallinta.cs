@@ -102,7 +102,7 @@ namespace Hotellivarausjarjestelma
             String snimi = sNimiTB.Text;
             String osoite = osoiteTB.Text;
             String pnro = postiNumeroTB.Text;
-            String ppaikka = postiNumeroTB.Text;
+            String ppaikka = postiTPTB.Text;
             String ssana = salasanaTB.Text;
             String kayttaja = kauttajaTunnusTB.Text;
 
